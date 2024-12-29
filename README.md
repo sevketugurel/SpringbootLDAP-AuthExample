@@ -1,44 +1,43 @@
-# LDAP Test Sunucusu Projesi
+# LDAP Test Server Project
 
-Bu proje, LDAP (Lightweight Directory Access Protocol) test sunucusu için örnek bir yapılandırma içermektedir.
+This project contains a sample configuration for an LDAP (Lightweight Directory Access Protocol) test server.
 
-## Proje Hakkında
+## About the Project
 
-Bu proje, test amaçlı bir LDAP sunucusu kurmak ve yapılandırmak için gerekli LDIF (LDAP Data Interchange Format) dosyasını içerir. LDAP, dizin hizmetleri için kullanılan bir protokoldür ve genellikle kullanıcı kimlik doğrulama ve yetkilendirme işlemleri için kullanılır.
+This project includes the LDIF (LDAP Data Interchange Format) file required to set up and configure a test LDAP server. LDAP is a protocol used for directory services and is commonly used for user authentication and authorization processes.
 
-## Yapılandırma Detayları
+## Configuration Details
 
-### Temel Yapı
+### Basic Structure
 
-- Kök domain: `dc=example,dc=com`
-- Organizasyon: Example Inc.
+- Root domain: `dc=example,dc=com`
+- Organization: Example Inc.
 
-### Organizasyon Birimleri
+### Organizational Units
 
-1. People (Kişiler)
-   - Yolu: `ou=people,dc=example,dc=com`
-   - Kullanıcı bilgilerini içerir
+1. People
+   - Path: `ou=people,dc=example,dc=com`
+   - Contains user information
 
-2. Groups (Gruplar)
-   - Yolu: `ou=groups,dc=example,dc=com`
-   - Grup tanımlamalarını içerir
+2. Groups
+   - Path: `ou=groups,dc=example,dc=com`
+   - Contains group definitions
 
-### Test Kullanıcısı
+### Test User
 
-- Kullanıcı ID (uid): test1
-- Tam Ad (cn): Test User1
-- Soyad (sn): User1
-- Şifre: test123
+- User ID (uid): test1
+- Full Name (cn): Test User1
+- Surname (sn): User1
+- Password: test123
 - DN: `uid=test1,ou=people,dc=example,dc=com`
 
-### Gruplar
+### Groups
 
-- Users Grubu
+- Users Group
   - DN: `cn=users,ou=groups,dc=example,dc=com`
-  - Üyeler: test1 kullanıcısı
+  - Members: test1 user
 
-## Sistem Test Görüntüleri
+## System Test Screenshots
 
-### phpLDAPadmin Arayüzü
-Burada phpLDAPadmin arayüzünden bir ekran görüntüsü ekleyebilirsiniz.
-
+### phpLDAPadmin Interface
+You can add a screenshot of the phpLDAPadmin interface here.
