@@ -38,6 +38,8 @@ This project includes the LDIF (LDAP Data Interchange Format) file required to s
   - Members: test1 user
 
 ## System Test Screenshots
+<img width="1083" alt="Ekran Resmi 2024-12-29 23 54 08" src="https://github.com/user-attachments/assets/905aa003-4ee3-44bb-a6ce-b0781bc37d5e" />
+<img width="1496" alt="Ekran Resmi 2024-12-29 23 53 50" src="https://github.com/user-attachments/assets/2793dc0e-9cf8-46e3-98e6-3ebaf808096c" />
 
 ### phpLDAPadmin Interface
-You can add a screenshot of the phpLDAPadmin interface here.
+<img width="1500" alt="Ekran Resmi 2024-12-29 23 54 18" src="https://github.com/user-attachments/assets/ea95c630-e778-4cc3-93ce-a211e2f034d7" />
