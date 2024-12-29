@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Ana Sayfa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">LDAP Demo</a>
+            <div class="navbar-nav ms-auto">
+                <form th:action="@{/logout}" method="post" class="d-flex">
+                    <button class="btn btn-outline-light" type="submit">Çıkış Yap</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="alert alert-success">
+            <h4 class="alert-heading">Hoş Geldiniz!</h4>
+            <p>Merhaba <strong th:text="${username}"></strong>, LDAP ile başarılı bir şekilde giriş yaptınız!</p>
+            <hr>
+            <p class="mb-0">Oturum açık ve güvenli bağlantı sağlandı.</p>
+        </div>
+    </div>
+</body>
+</html> 
