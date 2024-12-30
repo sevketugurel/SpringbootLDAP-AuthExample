@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.ldap.core.LdapTemplate;
-import org.springframework.ldap.core.support.LdapContextSource;
+import org.springframework.security.ldap.DefaultSpringSecurityContextSource;
+import java.util.Collections;
 
 @Configuration
 public class LdapConfig {
@@ -22,12 +23,12 @@ public class LdapConfig {
     private String ldapPassword;
 
     @Bean
-    public LdapContextSource contextSource() {
-        LdapContextSource contextSource = new LdapContextSource();
-        contextSource.setUrl(ldapUrl);
-        contextSource.setBase(ldapBaseDn);
+    public DefaultSpringSecurityContextSource contextSource() {
+        DefaultSpringSecurityContextSource contextSource = 
+            new DefaultSpringSecurityContextSource(Collections.singletonList(ldapUrl), ldapBaseDn);
         contextSource.setUserDn(ldapUsername);
         contextSource.setPassword(ldapPassword);
+        contextSource.afterPropertiesSet();
         return contextSource;
     }
 
