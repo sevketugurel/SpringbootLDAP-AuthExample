@@ -1,26 +1,24 @@
 version: 1
 
-# Root domain
+# Root
 dn: dc=example,dc=com
 objectclass: top
-objectclass: dcObject
-objectclass: organization
+objectclass: domain
 dc: example
-o: Example Inc.
 
-# Organizational Unit for People
-dn: ou=people,dc=example,dc=com
-objectclass: top
-objectclass: organizationalUnit
-ou: people
-
-# Organizational Unit for Groups
+# Groups
 dn: ou=groups,dc=example,dc=com
 objectclass: top
 objectclass: organizationalUnit
 ou: groups
 
-# Test User
+# People
+dn: ou=people,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+# User 1
 dn: uid=test1,ou=people,dc=example,dc=com
 objectclass: top
 objectclass: person

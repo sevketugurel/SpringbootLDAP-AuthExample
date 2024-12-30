@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hata</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="alert alert-danger">
+            <h4>Bir Hata Oluştu</h4>
+            <p th:text="${error}">Hata mesajı</p>
+        </div>
+        <a href="/login" class="btn btn-primary">Giriş Sayfasına Dön</a>
+    </div>
+</body>
+</html> 

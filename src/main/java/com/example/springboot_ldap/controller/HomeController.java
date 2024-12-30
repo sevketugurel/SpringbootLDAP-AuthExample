@@ -10,14 +10,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping("/")
-    public String index() {
-        return "redirect:/home";
+    public String index(Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated() && 
+            !authentication.getName().equals("anonymousUser")) {
+            return "redirect:/home";
+        }
+        return "redirect:/login";
     }
 
     @GetMapping("/home")
-    public String home(Model model) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        model.addAttribute("username", auth.getName());
-        return "home";
+    public String home(Model model, Authentication authentication) {
+        if (authentication == null || !authentication.isAuthenticated() || 
+            authentication.getName().equals("anonymousUser")) {
+            return "redirect:/login";
+        }
+        
+        try {
+            model.addAttribute("username", authentication.getName());
+            return "home";
+        } catch (Exception e) {
+            return "redirect:/login?error=true";
+        }
     }
 } 
