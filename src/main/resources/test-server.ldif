@@ -1,11 +1,5 @@
 version: 1
 
-# Root
-dn: dc=example,dc=com
-objectclass: top
-objectclass: domain
-dc: example
-
 # Groups
 dn: ou=groups,dc=example,dc=com
 objectclass: top
@@ -18,7 +12,18 @@ objectclass: top
 objectclass: organizationalUnit
 ou: people
 
-# User 1
+# Test Kullanıcısı 1
+dn: uid=test,ou=people,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Test User
+sn: User
+uid: test
+userPassword: test123
+
+# Test Kullanıcısı 2
 dn: uid=test1,ou=people,dc=example,dc=com
 objectclass: top
 objectclass: person
@@ -29,9 +34,10 @@ sn: User1
 uid: test1
 userPassword: test123
 
-# Users Group
+# Kullanıcılar Grubu
 dn: cn=users,ou=groups,dc=example,dc=com
 objectclass: top
 objectclass: groupOfUniqueNames
 cn: users
+uniqueMember: uid=test,ou=people,dc=example,dc=com
 uniqueMember: uid=test1,ou=people,dc=example,dc=com 

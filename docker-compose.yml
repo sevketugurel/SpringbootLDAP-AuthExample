@@ -1,19 +1,21 @@
-version: '3'
+version: '3.8'
+
 services:
   openldap:
     image: osixia/openldap:1.5.0
     container_name: openldap
     environment:
-      LDAP_ORGANISATION: "Example Inc."
+      LDAP_ORGANISATION: "Example Inc"
       LDAP_DOMAIN: "example.com"
+      LDAP_BASE_DN: "dc=example,dc=com"
       LDAP_ADMIN_PASSWORD: "admin"
-      LDAP_TLS: "false"
+      LDAP_CONFIG_PASSWORD: "config"
     ports:
       - "389:389"
       - "636:636"
     volumes:
-      - ./src/main/resources/test-server.ldif:/test-server.ldif
-    command: --copy-service
+      - ldap_data:/var/lib/ldap
+      - ldap_config:/etc/ldap/slapd.d
 
   phpldapadmin:
     image: osixia/phpldapadmin:0.9.0
@@ -24,4 +26,8 @@ services:
     ports:
       - "8081:80"
     depends_on:
-      - openldap 
+      - openldap
+
+volumes:
+  ldap_data:
+  ldap_config: 
