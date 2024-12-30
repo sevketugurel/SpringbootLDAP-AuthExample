@@ -18,7 +18,7 @@ Bu proje, Docker üzerinde çalışan OpenLDAP sunucusu ve bu sunucuyu yönetmek
 
 1. Projeyi klonlayın:
    ```bash
-   git clone [proje-url]
+   git clone https://github.com/sevketugurel/SpringbootLDAP-AuthExample.git
    ```
 
 2. Proje dizinine gidin:
